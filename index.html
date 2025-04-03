@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Chat</title>
+  <style>
+    body {
+      background-color: black;
+      color: white;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    #chat-container {
+      display: flex;
+      flex-direction: column;
+      max-width: 600px;
+      margin: auto;
+      padding: 20px;
+    }
+    #messages {
+      flex-grow: 1;
+      overflow-y: auto;
+      border: 1px solid #444;
+      padding: 10px;
+      margin-bottom: 10px;
+      min-height: 200px; /* Щоб вікно повідомлень не було порожнім */
+    }
+    #input-area {
+      display: flex;
+      gap: 10px;
+    }
+    #loading {
+      display: none;
+      text-align: center;
+      margin-top: 10px;
+    }
+    .btn {
+      cursor: pointer;
+      background-color: #222;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+    }
+    .btn:hover {
+      background-color: #333;
+    }
+  </style>
+</head>
+<body>
+  <div id="chat-container">
+    <!-- Вибір мови -->
+    <div id="language-selection">
+      <label for="language">Мова:</label>
+      <select id="language" class="btn">
+        <option value="en">English</option>
+        <option value="uk">Українська</option>
+      </select>
+    </div>
+
+    <!-- Вікно повідомлень -->
+    <div id="messages" aria-label="Чат-повідомлення"></div>
+
+    <!-- Індикатор завантаження -->
+    <div id="loading">Завантаження...</div>
+
+    <!-- Вхідне поле та кнопки -->
+    <div id="input-area">
+      <input type="text" id="input" placeholder="Введіть повідомлення..." class="btn" aria-label="Введіть текст">
+      <button id="send-btn" class="btn">Відправити</button>
+      <button id="clear-btn" class="btn">Очистити</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
